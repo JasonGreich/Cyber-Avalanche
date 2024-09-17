@@ -8,9 +8,21 @@ SELECT DISTINCT Country
 FROM transformed_cyber_staging.Individual_Cyber_Attacks
 ON DUPLICATE KEY UPDATE CountryID=LAST_INSERT_ID(CountryID);
 
-INSERT INTO cyber_attacks_warehouse.DetailedLocationDimension (Source_IP_Address, Destination_IP_Address, Valid_Source_IP, Valid_Destination_IP)
-SELECT DISTINCT Source_IP_Address, Destination_IP_Address, Valid_Source_IP, Valid_Destination_IP 
+INSERT INTO cyber_attacks_warehouse.SourceCountryDimension (Source_Country)
+SELECT DISTINCT source_country 
 FROM transformed_cyber_staging.Individual_Cyber_Attacks
+ON DUPLICATE KEY UPDATE SourceCountryID=LAST_INSERT_ID(SourceCountryID);
+
+INSERT INTO cyber_attacks_warehouse.DetailedLocationDimension (Source_IP_Address, Destination_IP_Address, Valid_Source_IP, Valid_Destination_IP, SourceCountryID)
+SELECT DISTINCT 
+    i.Source_IP_Address, 
+    i.Destination_IP_Address, 
+    i.Valid_Source_IP, 
+    i.Valid_Destination_IP, 
+    sc.SourceCountryID
+FROM transformed_cyber_staging.Individual_Cyber_Attacks i
+JOIN cyber_attacks_warehouse.SourceCountryDimension sc
+    ON i.source_country = sc.Source_Country
 ON DUPLICATE KEY UPDATE DetailedGeoLocationID=LAST_INSERT_ID(DetailedGeoLocationID);
 
 INSERT INTO cyber_attacks_warehouse.NetworkTrafficDimension (Source_Port, Destination_Port, Protocol, Packet_Length, Packet_Type, Traffic_Type, Network_Segment)
@@ -27,7 +39,6 @@ INSERT INTO cyber_attacks_warehouse.CompanyDimension (Company_Name, Industry)
 SELECT DISTINCT company_name, industry 
 FROM transformed_cyber_staging.companies_cyber_attacks
 ON DUPLICATE KEY UPDATE CompanyID=LAST_INSERT_ID(CompanyID);
-
 
 INSERT INTO cyber_attacks_warehouse.IndividualCyberAttacksFact (
     DateID, CountryID, DetailedGeoLocationID, NetworkTrafficID, DeviceID, Attack_Type, Payload_Data, Malware_Indicators,
@@ -50,7 +61,6 @@ JOIN cyber_attacks_warehouse.NetworkTrafficDimension n
 JOIN cyber_attacks_warehouse.DeviceDimension v 
     ON i.Browser = v.Browser AND i.Operating_System = v.Operating_System;
 
-
 INSERT INTO cyber_attacks_warehouse.CompaniesCyberAttacksFact (
     DateID, CountryID, CompanyID, Attack_Type, Breach_Size_No_of_Records, Attack_Vector, Mitigation_Time_Days, Financial_Loss_USD
 )
@@ -63,7 +73,6 @@ JOIN cyber_attacks_warehouse.CountryDimension c
     ON comp.country = c.Country
 JOIN cyber_attacks_warehouse.CompanyDimension com 
     ON comp.company_name = com.Company_Name;
-
 
 INSERT INTO cyber_attacks_warehouse.ActiveOnlineUsersFact (DateID, Active_Online_Users)
 SELECT 
