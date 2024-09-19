@@ -1,4 +1,4 @@
-Staging db:
+create database staging_cyber_attacks;
 Use staging_cyber_attacks;
 CREATE TABLE cyber_attacks_companies (
     incident_id VARCHAR(255),

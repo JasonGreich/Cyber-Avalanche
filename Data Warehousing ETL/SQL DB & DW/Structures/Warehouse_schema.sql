@@ -1,6 +1,8 @@
+create database cyber_attacks_warehouse;
 use cyber_attacks_warehouse;
 
-CREATE TABLE DateDimension (
+-- Date Dimension
+CREATE TABLE cyber_attacks_warehouse.DateDimension (
     DateID INT AUTO_INCREMENT PRIMARY KEY,
     Day INT,
     Month INT,
@@ -8,20 +10,31 @@ CREATE TABLE DateDimension (
     Hour_of_Day INT
 );
 
-CREATE TABLE CountryDimension (
+-- Country Dimension
+CREATE TABLE cyber_attacks_warehouse.CountryDimension (
     CountryID INT AUTO_INCREMENT PRIMARY KEY,
     Country VARCHAR(100)
 );
 
-CREATE TABLE DetailedLocationDimension (
+-- Source Country Dimension (for source_country)
+CREATE TABLE cyber_attacks_warehouse.SourceCountryDimension (
+    SourceCountryID INT AUTO_INCREMENT PRIMARY KEY,
+    Source_Country VARCHAR(100)
+);
+
+-- Detailed Location Dimension (including SourceCountryID)
+CREATE TABLE cyber_attacks_warehouse.DetailedLocationDimension (
     DetailedGeoLocationID INT AUTO_INCREMENT PRIMARY KEY,
     Source_IP_Address VARCHAR(45),
     Destination_IP_Address VARCHAR(45),
     Valid_Source_IP BOOLEAN,
-    Valid_Destination_IP BOOLEAN
+    Valid_Destination_IP BOOLEAN,
+    SourceCountryID INT,  -- Foreign key to the new SourceCountryDimension
+    FOREIGN KEY (SourceCountryID) REFERENCES SourceCountryDimension(SourceCountryID)
 );
 
-CREATE TABLE NetworkTrafficDimension (
+-- Network Traffic Dimension
+CREATE TABLE cyber_attacks_warehouse.NetworkTrafficDimension (
     NetworkTrafficID INT AUTO_INCREMENT PRIMARY KEY,
     Source_Port INT,
     Destination_Port INT,
@@ -32,20 +45,23 @@ CREATE TABLE NetworkTrafficDimension (
     Network_Segment VARCHAR(50)
 );
 
-CREATE TABLE CompanyDimension (
+-- Company Dimension
+CREATE TABLE cyber_attacks_warehouse.CompanyDimension (
     CompanyID INT AUTO_INCREMENT PRIMARY KEY,
     Company_Name VARCHAR(255),
     Industry VARCHAR(255)
 );
 
-CREATE TABLE DeviceDimension (
+-- Device Dimension
+CREATE TABLE cyber_attacks_warehouse.DeviceDimension (
     DeviceID INT AUTO_INCREMENT PRIMARY KEY,
     Browser VARCHAR(100),
     Operating_System VARCHAR(100),
     Device_Type VARCHAR(50)
 );
 
-CREATE TABLE IndividualCyberAttacksFact (
+-- Individual Cyber Attacks Fact
+CREATE TABLE cyber_attacks_warehouse.IndividualCyberAttacksFact (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     DateID INT,
     CountryID INT,
@@ -72,7 +88,8 @@ CREATE TABLE IndividualCyberAttacksFact (
     FOREIGN KEY (DeviceID) REFERENCES DeviceDimension(DeviceID)
 );
 
-CREATE TABLE CompaniesCyberAttacksFact (
+-- Companies Cyber Attacks Fact
+CREATE TABLE cyber_attacks_warehouse.CompaniesCyberAttacksFact (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     DateID INT,
     CountryID INT,
@@ -87,7 +104,8 @@ CREATE TABLE CompaniesCyberAttacksFact (
     FOREIGN KEY (CompanyID) REFERENCES CompanyDimension(CompanyID)
 );
 
-CREATE TABLE ActiveOnlineUsersFact (
+-- Active Online Users Fact
+CREATE TABLE cyber_attacks_warehouse.ActiveOnlineUsersFact (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     DateID INT,
     Active_Online_Users BIGINT,

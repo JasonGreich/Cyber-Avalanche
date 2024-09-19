@@ -1,3 +1,4 @@
+create database transformed_cyber_staging; 
 use transformed_cyber_staging;
 CREATE TABLE Individual_Cyber_Attacks (
     ID INT PRIMARY KEY,  -- Assuming 'Unnamed: 0' is an ID column
@@ -33,7 +34,9 @@ CREATE TABLE Individual_Cyber_Attacks (
     Year INT,  -- Matches DateDimension
     Browser VARCHAR(50),  -- Matches DeviceDimension
     Operating_System VARCHAR(50),  -- Matches DeviceDimension
-    Device_Type VARCHAR(50)  -- Matches DeviceDimension
+    Device_Type VARCHAR(50)  ,-- Matches DeviceDimension
+    Source_Country VARCHAR(100)
+
 );
 CREATE TABLE companies_cyber_attacks (
     id SERIAL PRIMARY KEY,
@@ -59,4 +62,3 @@ CREATE TABLE active_online_users (
     month INTEGER,  -- Matches DateDimension
     day INTEGER  -- Matches DateDimension
 );
-
