@@ -53,19 +53,20 @@
 <img src="./readme/title6.svg"/>
 
 
-### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
-| ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
 
-### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+### User Screens (Power BI report)
+
+| Overview Screen                           | Individual Attacks Analysis                         |
+| ----------------------------------------- | ----------------------------------------- |
+| ![Demo](./readme/assets/overview.png) | ![Demo](./readme/assets/ind1.png) |
+
+| Device Analysis           | Network Screen                         |
+| --------------------------------- | -------------------------------------- |
+| ![Demo](./readme/assets/devicde.png) | ![Demo](./readme/assets/network.png) |
+
+| Companies Attacks Analysis             | Time Series Analysis         |
+| ----------------------------------- | --------------------------------- |
+| ![Demo](./readme/assets/comp1.png) | ![Demo](./readme/assets/time2.png) |
 
 <br><br>
 
@@ -73,9 +74,9 @@
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
 
-###  Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
+### Harnessing Machine Learning for Cybersecurity: Unveiling the Power of Predictive Models:
 
-- This project uses advanced prompt engineering techniques to optimize the interaction with natural language processing models. By skillfully crafting input instructions, we tailor the behavior of the models to achieve precise and efficient language understanding and generation for various tasks and preferences.
+- This project employs advanced machine learning techniques to analyze and predict cyber attack patterns. By carefully selecting features and tuning the Random Forest algorithm, we tailor the model to achieve accurate anomaly detection, enabling organizations to proactively defend against cyber threats. The integration of machine learning models into the data pipeline ensures a comprehensive approach to cybersecurity analysis.
 
 <br><br>
 
@@ -84,9 +85,9 @@
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
 
-###  Precision in Development: Harnessing the Power of Unit Testing:
+### Precision in Development: Harnessing the Power of Validation:
 
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
+- This project employs rigorous validation checks in SQL to ensure data consistency between the staging area and the data warehouse. By validating that data loaded into the warehouse matches the source datasets, we ensure accuracy and integrity throughout the ETL (Extract, Transform, Load) pipeline. These validation steps are critical in maintaining the quality of analysis on cyber attacks data, ensuring that all insights and predictions are based on reliable and accurate data.
 
 <br><br>
 
