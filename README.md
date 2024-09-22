@@ -5,50 +5,45 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A mobile app for ordering coffee on-the-go, making it easier for coffee lovers to get their favorite beverages without waiting in line.
+> A full-stack data project for analyzing cyber attacks on individuals and companies, combining multiple datasets in a MySQL data warehouse, cleaning and analysis in Python, visualization in Power BI, and using a Random Forest algorithm to predict anomaly score classes.
 >
-> Coffee Express aims to streamline the coffee-ordering process by providing a user-friendly platform for customers to place orders and pick up their coffee at their convenience. We believe in enhancing the coffee experience by saving time and ensuring customer satisfaction.
+> Cyber Avalanche aims to streamline the process of cyber attack analysis by providing a comprehensive data pipeline from ingestion to visualization and machine learning. The goal is to identify and predict potential anomalies in cyber attack patterns to better understand vulnerabilities and enhance security
+
 
 ### User Stories
-- As a user, I want to browse the menu, so I can find my favorite coffee drinks.
-- As a user, I want to customize my order, so I can add or remove ingredients according to my preferences.
-- As a user, I want to pay for my order through the app, so I can avoid waiting in line at the store.
+- As a user, I want to view visualizations of cyber attack data in Power BI dashboards, so I can quickly gain insights into where and how attacks are happening.
 
+- As a business executive, I want to assess the impact of cyber attacks through detailed reports, so I can make informed decisions about security investments and risk management.
+
+- As a data engineer, I want to ensure the data is processed and updated efficiently from multiple sources, so I can keep the system reliable for continuous analysis.
 <br><br>
+
+
 <!-- Tech stack -->
 <img src="./readme/title3.svg"/>
 
-###  Coffee Express is built using the following technologies:
+### Cyber Avalanche is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- This project uses [MySQL](https://www.mysql.com/) as the primary data warehouse for storing and managing multiple datasets on cyber attacks targeting individuals and companies.
 
-<br><br>
-<!-- UI UX -->
-<img src="./readme/title4.svg"/>
+- For data cleaning and preprocessing, [Python](https://www.python.org/) is used along with libraries like Pandas and NumPy, which provide powerful tools for transforming, filtering, and analyzing the data.
 
+- To create visualizations that help identify trends and anomalies in cyber attacks, [Power BI](https://powerbi.microsoft.com/) is utilized for interactive dashboards and reports.
 
-> We designed Coffee Express using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
+- For machine learning and anomaly detection, a [Random Forest algorithm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) from Scikit-learn is used to predict anomaly score classes, helping organizations mitigate cyber threats.
 
-- Project Figma design [figma](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?type=design&node-id=257%3A79&mode=design&t=adzbABt5hbb91ucZ-1)
-
-
-### Mockups
-| Home screen  | Menu Screen | Order Screen |
-| ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+- The project adheres to best practices in data engineering, ensuring smooth data ingestion, transformation, and presentation across all stages of the pipeline.
 
 <br><br>
 
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
-###  Architecting Data Excellence: Innovative Database Design Strategies:
+###  Architecting Data Excellence: Innovative Data Warehouse Design Strategies:
 
-- Insert ER Diagram here
+- Below is the ER Diagram that demonstrates the database structure for Cyber Avalanche, showcasing the relationships between the different datasets on cyber attacks targeting individuals and companies.
+
+<img src="./readme/assets/Data Warehouse Design.png"/>
 
 
 <br><br>
@@ -84,14 +79,7 @@
 
 <br><br>
 
-<!-- AWS Deployment -->
-<img src="./readme/title8.svg"/>
 
-###  Efficient AI Deployment: Unleashing the Potential with AWS Integration:
-
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
-
-<br><br>
 
 <!-- Unit Testing -->
 <img src="./readme/title9.svg"/>
