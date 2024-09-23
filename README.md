@@ -111,30 +111,45 @@ Objective: To predict anomaly score classes in cyber attack data for proactive t
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
 
-> To set up Coffee Express locally, follow these steps:
+> To set up Cyber Avalanche locally, follow these steps:
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Basic knowledge in python and rubbing sql queries in MySQL Workbench would be a good start, in addition to some knowledge in Power BI navigation and visuals. 
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [example](https://example.com)
-2. Clone the repo
-   git clone [github](https://github.com/your_username_/Project-Name.git)
-3. Install NPM packages
+1. Clone the github repo by runing the following command in the cmd
    ```sh
-   npm install
+   git clone https://github.com/JasonGreich/Cyber-Avalanche.git
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+2. Install the required packages
+   ```sh
+   pip install -r requirements.txt
    ```
+3. ETL & Data Warehousing part:
 
-Now, you should be able to run Coffee Express locally and explore its features.
+   - Open the SQL scripts in the following folder "\Data Warehousing ETL\SQL DB & DW\Structures" and run each one in MySQL to have the schemas ready to load.
+
+   - Run the "\Data Warehousing ETL\Cleaning.ipynb" file in jupyter to load all the data in the sql staging databases.
+
+   - Run the "\Data Warehousing ETL\Full_load.sql" in MySQL to load the data into the data warehouse.
+
+4. Python Analysis:
+
+   - Open "/Python Analysis" folder.
+
+   - Run "Individuals_attacks_analysis.ipynb" to get a deeper insight on the individuals attacks data.
+
+   - Run "Companies_attacks_analysis.ipynb" to get a deeper insight on the companies attacks data.
+
+   - Run "Active_users_analysis.ipynb" to get a deeper insight on the active online users data.
+
+5. Power BI:
+
+   - 
+
+
+
+Now, you should be able to run CreditGuard locally and explore its features.
