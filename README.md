@@ -74,9 +74,25 @@
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
 
-### Harnessing Machine Learning for Cybersecurity: Unveiling the Power of Predictive Models:
+### Anomaly Score Prediction Model
 
-- This project employs advanced machine learning techniques to analyze and predict cyber attack patterns. By carefully selecting features and tuning the Random Forest algorithm, we tailor the model to achieve accurate anomaly detection, enabling organizations to proactively defend against cyber threats. The integration of machine learning models into the data pipeline ensures a comprehensive approach to cybersecurity analysis.
+Algorithm: Random Forest Classifier
+
+Objective: To predict anomaly score classes in cyber attack data for proactive threat detection.
+
+1. Preprocessing:
+   - Dropped irrelevant columns that do not contribute to anomaly prediction.
+   - Handled missing values using appropriate techniques such as filling with the mean or using imputation strategies.
+   - Normalized and encoded categorical variables like attack type, location, and source using label encoding and one-hot encoding as required.
+
+2. Training:
+   - Split the dataset into training (80%) and testing (20%) sets.
+   - Trained the model using a Random Forest Classifier with hyperparameter tuning (e.g., 100 estimators, max depth, etc.) to optimize performance.
+
+3. Evaluation:
+   - Evaluated model performance based on accuracy and other relevant metrics.
+   - Generated a detailed classification report including precision, recall, and F1-score to assess model performance.
+
 
 <br><br>
 
