@@ -148,7 +148,13 @@ Basic knowledge in python and rubbing sql queries in MySQL Workbench would be a 
 
 5. Power BI:
 
-   - 
+   - Install Power BI desktop (https://www.microsoft.com/en-us/download) and open Cyber "Analysis.pbix" for some data analytics.
+
+6. ML Model:
+   - Open the "/Model" folder. 
+
+   - Run the "Model.ipynb" file to see the model's metrics (f1 score, precison, etc ...).
+
 
 
 
