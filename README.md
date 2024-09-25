@@ -56,22 +56,31 @@
 
 ### User Screens (Power BI report)
 
-| Overview Screen                           | Individual Attacks Analysis                         |
+| Overview Screen                           | Network Analysis                         |
 | ----------------------------------------- | ----------------------------------------- |
-| ![Demo](./readme/assets/overview.png) | ![Demo](./readme/assets/ind1.png) |
+| ![Demo](./readme/assets/overview.png) | ![Demo](./readme/assets/gif2.gif) |
 
-| Device Analysis           | Network Screen                         |
+| Device Analysis           | Individual Attacks Analysis                         |
 | --------------------------------- | -------------------------------------- |
-| ![Demo](./readme/assets/devicde.png) | ![Demo](./readme/assets/network.png) |
+| ![Demo](./readme/assets/gif1.gif) | ![Demo](./readme/assets/ind1.png) |
 
-| Companies Attacks Analysis             | Time Series Analysis         |
+| Companies Distributions Analysis             | Companies Attacks Analysis         |
 | ----------------------------------- | --------------------------------- |
-| ![Demo](./readme/assets/comp1.png) | ![Demo](./readme/assets/time2.png) |
+| ![Demo](./readme/assets/comp2.png) | ![Demo](./readme/assets/gif3.gif) |
+
+<br><br>
+
+<!-- Unit Testing -->
+<img src="./readme/title9.svg"/>
+
+### Precision in Development: Harnessing the Power of Validation:
+
+- This project employs rigorous validation checks in SQL to ensure data consistency between the staging area and the data warehouse. By validating that data loaded into the warehouse matches the source datasets, we ensure accuracy and integrity throughout the ETL (Extract, Transform, Load) pipeline. These validation steps are critical in maintaining the quality of analysis on cyber attacks data, ensuring that all insights and predictions are based on reliable and accurate data.
 
 <br><br>
 
 
-<!-- Prompt Engineering -->
+<!-- Machine Learning -->
 <img src="./readme/title7.svg"/>
 
 ### Anomaly Score Prediction Model
@@ -98,14 +107,6 @@ Objective: To predict anomaly score classes in cyber attack data for proactive t
 
 
 
-<!-- Unit Testing -->
-<img src="./readme/title9.svg"/>
-
-### Precision in Development: Harnessing the Power of Validation:
-
-- This project employs rigorous validation checks in SQL to ensure data consistency between the staging area and the data warehouse. By validating that data loaded into the warehouse matches the source datasets, we ensure accuracy and integrity throughout the ETL (Extract, Transform, Load) pipeline. These validation steps are critical in maintaining the quality of analysis on cyber attacks data, ensuring that all insights and predictions are based on reliable and accurate data.
-
-<br><br>
 
 
 <!-- How to run -->
