@@ -103,9 +103,8 @@ Objective: To predict anomaly score classes in cyber attack data for proactive t
    - Generated a detailed classification report including precision, recall, and F1-score to assess model performance.
 
 4. Further Improvments:
-   - **Improving Model Accuracy**: Experiment with different algorithms (e.g., Gradient Boosting, XGBoost), feature selection methods, and advanced hyperparameter tuning (e.g., GridSearchCV or RandomizedSearchCV) to enhance the model's accuracy.
-   - **Creating a Web Interface**: Develop a user-friendly web interface using Flask or Django to allow users to upload data for anomaly prediction and view results in real-time, enabling easy interaction with the model.
-
+   - **Improving Model Accuracy**: Explore additional techniques and models to further improve the prediction accuracy.
+   - **Creating a Web Interface**: Build a simple web interface to allow users to easily upload data and view anomaly predictions.
 
 <br><br>
 
